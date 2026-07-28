@@ -1,8 +1,9 @@
+import matplotlib.pyplot as plt
+import pandas as pd
 import streamlit as st
 import numpy as np
 import pickle
 from tensorflow.keras.models import load_model
-import matplotlib.pyplot as plt
 
 # Page config
 st.set_page_config(page_title="Predictive Maintenance", layout="wide")
@@ -52,7 +53,19 @@ with col1:
 # Prediction
 if st.sidebar.button("🔍 Predict"):
 
-    input_data = np.array([[air_temp, process_temp, speed, torque, tool_wear, type_L, type_M]])
+    input_data = pd.DataFrame(
+        [[air_temp, process_temp, speed, torque, tool_wear, type_L, type_M]],
+        columns=[
+            "Air temperature [K]",
+            "Process temperature [K]",
+            "Rotational speed [rpm]",
+            "Torque [Nm]",
+            "Tool wear [min]",
+            "Type_L",
+            "Type_M"
+        ]
+    )
+
     input_scaled = scaler.transform(input_data)
 
     prediction = model.predict(input_scaled)[0][0]
