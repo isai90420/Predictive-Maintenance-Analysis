@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="Predictive Maintenance", layout="wide")
 
 # Load model
-model = load_model("C:/Users/isaipriya/saved_files/ann_model.keras")
+model = load_model("ann_model.keras")
 
 # Load scaler
-with open("C:/Users/isaipriya/saved_files/scaler.pkl", "rb") as f:
+with open("scaler.pkl", "rb") as f:
     scaler = pickle.load(f)
 
 # Title
