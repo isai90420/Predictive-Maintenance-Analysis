@@ -179,17 +179,15 @@ The application will start locally and can be accessed through your browser.
 
 ---
 
-# 📸 Application Screenshots
+## 📸 Application Screenshots
 
-## Home Page
+### Home Page
 
-> Add a screenshot of your Streamlit application's home page here.
+![Home Page](images/home.png)
 
----
+### Prediction Result
 
-## Prediction Result
-
-> Add a screenshot showing a prediction result.
+![Prediction Result](images/prediction.png)
 
 ---
 
